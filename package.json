@@ -22,6 +22,7 @@
     "json-loader": "^0.5.4",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
+    "react-component-maker": "^1.5.0",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.4.0",
     "sass-loader": "^6.0.6",
