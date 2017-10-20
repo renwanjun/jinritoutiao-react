@@ -15,18 +15,18 @@ import styles from './css/Greeter.css';
 
 // console.log(factorial(5));
 
-var http=require('http');
-function helloworld(){
-  console.log('sss');
+// var http=require('http');
+// function helloworld(){
+//   console.log('sss');
     
-    http.createServer(function(req,res){
-        res.writeHead(200,{'Content-Type':'text/plain'});
-        res.end('Hello World\n');
-    }).listen(3000);
-    conosole.log('Server running at http://localhost:3000/');
-}
+//     http.createServer(function(req,res){
+//         res.writeHead(200,{'Content-Type':'text/plain'});
+//         res.end('Hello World\n');
+//     }).listen(3000);
+//     conosole.log('Server running at http://localhost:3000/');
+// }
 
-helloworld();
+// helloworld();
 
 function factorial(n,total){
   if(n===1) return total;

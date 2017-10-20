@@ -32,7 +32,11 @@ module.exports={
 		  ,{
 			  test:/\.css$/,
 			  loader:"style-loader!css-loader?modules|postcss-loader"
-		  }
+		  },
+		  {
+			test: /\.scss$/,
+			loader: 'style-loader!css-loader!sass-loader' //这里用了样式分离出来的插件，如果不想分离出来，可以直接这样写 loader:'style!css!sass'
+	     	}
          ]
 	},
 	plugins:[

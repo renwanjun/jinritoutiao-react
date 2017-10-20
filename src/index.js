@@ -19,9 +19,7 @@ function counter(state=0,action){
           return state 
     }
 }
-
 let store=createStore(counter);
-
 store.subscribe( ()=>
   console.log(store.getState())
 );
@@ -33,8 +31,7 @@ import Greeter from './Greeter';
 
 
 //CSS
-import './css/main.css';  //使用require导入css文件
-
+import './css/main.scss';  //使用require导入css文件
 //  class -> className ; for ->htmlFor
 render(<Greeter name="greeter" >
     {/*<span>hello</span>*/}
