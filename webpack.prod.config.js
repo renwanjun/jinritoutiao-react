@@ -7,6 +7,8 @@ var webpack=require('webpack');
 var HtmlWebpackPlugin=require('html-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 // 项目根路径
 // 项目源码路径
 // 产出路径
@@ -18,7 +20,21 @@ module.exports={
 		// publicPath: '/assets/',
 		filename:"bundle-[hash].js"       // 打包后输出文件的文件名
 	},
-	devtool:'eval-source-map',       //配置生成Source Maps（使调试更容易），有四种选项选择合适的选项
+    devtool:'none',       //配置生成Source Maps（使调试更容易），有四种选项选择合适的选项
+    // devServer: {   //让你的浏览器监测你的代码的修改，并自动刷新修改后的结果
+    //     // proxy: {
+    //     // 	"/api/*": {
+    //     // 		target: "https://cnodejs.org",
+    //     // 		secure: false
+    //     // 	}
+    //     // },
+    //     // port:8888,
+    //     contentBase: "./public", //本地服务器所加载的页面所在的目录
+    //     colors: true, //终端中输出结果为彩色
+    //     historyApiFallback: true, //不跳转
+    //     inline: true, //实时刷新,当源文件改变时会自动刷新页面
+    //     hot:true
+    // },
 	module:{                      
 		loaders: [
           {
@@ -44,8 +60,11 @@ module.exports={
 		new webpack.BannerPlugin('renwanjun版权所有，翻版必究'),  // 版权声明插件
 		new HtmlWebpackPlugin({
 			template:__dirname+"/src/index.tmpl.html"
-		})
-		,new webpack.HotModuleReplacementPlugin()   //  热加载插件
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new ExtractTextPlugin("style.css")
+		// ,new webpack.HotModuleReplacementPlugin()   //  热加载插件
 		,new webpack.LoaderOptionsPlugin({
 			options:{
 				postcss:function(){

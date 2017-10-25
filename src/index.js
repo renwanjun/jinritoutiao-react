@@ -8,7 +8,6 @@
 
 //Redux
 import {createStore} from 'redux';
-
 function counter(state=0,action){
     switch(action.type){
         case 'INCREMENT':
@@ -33,6 +32,7 @@ import Greeter from './Greeter';
 //CSS
 import './css/main.scss';  //使用require导入css文件
 //  class -> className ; for ->htmlFor
+// 使用ES6的模块定义和渲染Greeter模块
 render(<Greeter name="greeter" >
     {/*<span>hello</span>*/}
 </Greeter>, document.getElementById('root'));

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "start": "webpack",
+    "build": "set NODE_ENV=production && webpack --config webpack.prod.config.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "renwj",
@@ -18,6 +19,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.29.0",
     "json-loader": "^0.5.4",
     "node-sass": "^4.5.3",
