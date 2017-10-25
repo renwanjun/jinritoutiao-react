@@ -1,5 +1,9 @@
 #简介
 工程提供便利的编译、刷新、压缩、打包功能
+webpack和react使用教程  
+http://www.jianshu.com/p/42e11515c10f
+http://www.jianshu.com/p/418e48e0cef1
+http://www.jianshu.com/p/4df92c335617
 
 #工程启动
 1.npm install
