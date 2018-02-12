@@ -3,8 +3,8 @@
 import React, {Component} from 'react'
 import config from './assets/config.json';
 
-import styles from './css/Greeter.css';
-
+import styles from './styles/scss/greeter.scss';
+import Header from './pages/header';
 // import BankList from './pages/bankList/component/bankList';
 // import HelpCenter from './pages/helpCenter/Component/helpCenter';
 
@@ -37,30 +37,30 @@ console.log(factorial(5,1));
 
 // React.createClass 组件类 第一个字母必须大写且只能包含一个顶层标签
 // this.props.children 组件的所有子节点
-const Header=React.createClass({
-  propTypes:{        // 验证组件实例的属性是否符合要求
-    titleProp:React.PropTypes.string
-  },
-  getDefaultProps(){  // 设置组件属性的默认值
-    return {
-      titleProp:''
-    }
-  },
-  
-  getInitialState:function(){
-    return {
-      liked:false
-    };
-  },
-  handleClick:function(event){
-    this.setState({liked:!this.state.liked});
-  },
-  render:function(){
-    return (
-      <div>以前的方式创建组件</div>
-      )
-  }
-});
+// const Header=React.createClass({
+//   propTypes:{        // 验证组件实例的属性是否符合要求
+//     titleProp:React.PropTypes.string
+//   },
+//   getDefaultProps(){  // 设置组件属性的默认值
+//     return {
+//       titleProp:''
+//     }
+//   },
+//
+//   getInitialState:function(){
+//     return {
+//       liked:false
+//     };
+//   },
+//   handleClick:function(event){
+//     this.setState({liked:!this.state.liked});
+//   },
+//   render:function(){
+//     return (
+//       <div>以前的方式创建组件</div>
+//       )
+//   }
+// });
 
 // React.Component(ES6)
 class Greeter extends Component{
@@ -74,7 +74,6 @@ class Greeter extends Component{
   handleClick(){
     // console.log(this);
   }
-
   // handleClick=()=>{
   // }
   render() {
@@ -83,13 +82,13 @@ class Greeter extends Component{
     // title: React.PropTypes.string.isRequired,
     // },
     return (
-      
-      <div className={styles.root} onClick={this.handleClick.bind(this)}
+      <div className='root' onClick={this.handleClick.bind(this)}
       >   
-        {config.greetText} 
-        {this.props.children}
+        {/*{config.greetText}*/}
+        {/*都是的撒*/}
+        {/*{this.props.children}*/}
 
-        {/*<BankList></BankList>*/}
+          <Header></Header>
         {/* <HelpCenter></HelpCenter> */}
       </div>
     );

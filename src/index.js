@@ -28,9 +28,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import Greeter from './Greeter';
 
+//全局 CSS
+import './styles/index.css';
+import './styles/main.scss';  //使用require导入css文件
 
-//CSS
-import './css/main.scss';  //使用require导入css文件
 //  class -> className ; for ->htmlFor
 // 使用ES6的模块定义和渲染Greeter模块
 render(<Greeter name="greeter" >
