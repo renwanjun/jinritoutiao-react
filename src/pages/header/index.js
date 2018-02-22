@@ -23,9 +23,16 @@ class Header extends Component{
         // title: React.PropTypes.string.isRequired,
         // },
         return (
-            <div className='header'>
+            <div>
+              <div className='header'>
                 网易
+               </div>
+                <div className='block bounceInLeft'>
+                    君生我未生
+                    我生君已老
+                </div>
             </div>
+
         );
     }
 }
